@@ -1,4 +1,5 @@
-// db access functions here
+const db = require('../../data/db-config')
+
 module.exports = {
   get,
   getById,
@@ -8,21 +9,30 @@ module.exports = {
 }
 
 function get() {
-  return Promise.resolve('get wired')
+  // return db().from('posts').select('*')
+  return db('posts')
 }
 
 function getById(id) {
-  return Promise.resolve('getById wired')
+  return db('posts').where('id', id).first()
 }
 
 function create(post) {
-  return Promise.resolve('create wired')
+  return db('posts').insert(post)
+    .then(([id]) => {
+      return getById(id)
+    })
 }
 
 function update(id, post) {
-  return Promise.resolve('update wired')
+  return db('posts').update(post).where('id', id)
+    .then(() => {
+      return getById(id)
+    })
 }
 
-function remove(id) {
-  return Promise.resolve('delete wired')
+async function remove(id) {
+  const post = await getById(id)
+  await db('posts').del().where('id', id)
+  return Promise.resolve(post)
 }

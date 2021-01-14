@@ -4,6 +4,11 @@ const router = express.Router()
 
 const Post = require('./post-model')
 
+const checkId = async (req, res, next) => {
+  const post = await Post.getById(req.params.id)
+  post ? next() : res.status(404).json('not found')
+}
+
 router.get('/', async (req, res, next) => {
   try {
     const data = await Post.get()
@@ -13,7 +18,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-router.get('/:id', async (req, res, next) => {
+router.get('/:id', checkId, async (req, res, next) => {
   try {
     const data = await Post.getById(req.params.id)
     res.json(data)
@@ -31,7 +36,7 @@ router.post('/', async (req, res, next) => {
   }
 })
 
-router.put('/:id', async (req, res,next ) => {
+router.put('/:id', checkId, async (req, res, next) => {
   try {
     const data = await Post.update(req.params.id, req.body)
     res.json(data)
@@ -40,7 +45,7 @@ router.put('/:id', async (req, res,next ) => {
   }
 })
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', checkId, async (req, res, next) => {
   try {
     const data = await Post.remove(req.params.id)
     res.json(data)
