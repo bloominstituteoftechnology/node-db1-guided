@@ -4,6 +4,7 @@
     "main": "index.js",
     "scripts": {
         "server": "nodemon index.js",
+        "start": "node index .js",
         "ketchup": "git fetch && git reset --hard origin/lecture"
     },
     "repository": "https://github.com/LambdaSchool/node-db1-guided.git",
