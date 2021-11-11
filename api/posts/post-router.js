@@ -3,6 +3,8 @@ const Post = require('./post-model')
 
 const router = express.Router()
 
+
+
 function checkId(req, res, next) {
   next()
 }

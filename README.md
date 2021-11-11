@@ -12,3 +12,11 @@ In this project we will cover the basics of `Structure Query Language (SQL)`, `R
 - [ ] clone this repository.
 - [ ] move into the project folder.
 - [ ] type `npm i` to download dependencies.
+
+
+
+// ________________________
+
+
+db('posts')
+INSERT({ title: title, contents: contents })
