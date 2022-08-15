@@ -13,8 +13,8 @@ async function get() {
   return db('shippers');
 }
 
-async function getById() {
-  return 'getById wired'
+async function getById(id) {
+  return db('shippers').where('shipperid', id);
 }
 
 async function create() {
