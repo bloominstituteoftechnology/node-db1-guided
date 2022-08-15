@@ -9,7 +9,7 @@
 const db = require('./data/db-config');
 
 // SELECT * FROM Shippers;
-db('shippers').where('shippername', '=', 'Speedy Express').select('phone', 'ShIpPeRnAmE')
+db('shippers').select('phone', 'ShIpPeRnAmE').where('shippername', '=', 'Speedy Express')
   .then(result => {
     console.log(result);
   });
