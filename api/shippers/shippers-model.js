@@ -22,10 +22,13 @@ async function create(shipper) {
   return await getById(id)
 }
 
-async function update() {
-  return 'update wired'
+async function update(id, changes) {
+  await db('shippers').update(changes).where('shipperid', id);
+  return getById(id);
 }
 
-async function remove() {
-  return 'delete wired'
+async function remove(id) {
+  const result = await getById(id);
+  await db('shippers').delete().where('shipperid', id);
+  return result;
 }
