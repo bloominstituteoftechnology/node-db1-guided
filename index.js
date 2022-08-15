@@ -8,9 +8,9 @@
 
 const db = require('./data/db-config');
 
-// SELECT * FROM Shippers;
+// SELECT * FROM Shippers WHERE ShipperName = 'Speedy Express' AND ShipperID = 1;
 db('shippers')
-  .where('shippername', '=', 'Speedy Express')
+  .where('shippername', 'Speedy Express')
   .then(result => {
     console.log(result);
   });
