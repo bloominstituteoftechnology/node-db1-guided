@@ -1,12 +1,12 @@
-// const server = require("./api/server.js")
+const server = require("./api/server.js")
 
-// const PORT = process.env.PORT || 9000
+const PORT = process.env.PORT || 9000
 
-// server.listen(PORT, () => {
-//   console.log(`\n== API running on port ${PORT} ==\n`)
-// })
+server.listen(PORT, () => {
+  console.log(`\n== API running on port ${PORT} ==\n`)
+})
 
-const db = require('./data/db-config');
+// const db = require('./data/db-config');
 
 // SELECT * FROM Shippers WHERE ShipperName = 'Speedy Express' AND ShipperID = 1;
 // db('shippers')
@@ -32,7 +32,7 @@ const db = require('./data/db-config');
 //     console.log(result);
 //   });
 
-db('shippers').where('ShipperId', 7).delete()
-  .then(result => {
-    console.log(result);
-  });
+// db('shippers').where('ShipperId', 7).delete()
+//   .then(result => {
+//     console.log(result);
+//   });
