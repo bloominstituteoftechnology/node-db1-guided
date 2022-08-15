@@ -9,15 +9,15 @@
 const db = require('./data/db-config');
 
 // SELECT * FROM Shippers WHERE ShipperName = 'Speedy Express' AND ShipperID = 1;
-db('shippers')
+// db('shippers')
 //   // .where('shippername', 'Speedy Express')
 //   .where({
 //     ShipperName: 'Speedy Express',
 //     ShipperID: 1,
 //   })
-  .then(result => {
-    console.log(result);
-  });
+//   .then(result => {
+//     console.log(result);
+//   });
 
 // INSERT INTO Shippers (ShipperName, Phone) VALUES ('New Shipper', '1234567890')
 // db('shippers')
@@ -25,3 +25,9 @@ db('shippers')
 //   .then(result => {
 //     console.log(result);
 //   });
+
+// UPDATE Shippers SET ShipperName = 'Newest Shipper' WHERE ShipperID = 7
+db('shippers').where('ShipperID', 7).update({ ShipperName: 'Newest Shipper'})
+  .then(result => {
+    console.log(result);
+  });
