@@ -17,8 +17,8 @@ async function getById(id) {
   return db('shippers').where('shipperid', id);
 }
 
-async function create() {
-  return 'create wired'
+async function create(shipper) {
+  return db('shippers').insert(shipper);
 }
 
 async function update() {
