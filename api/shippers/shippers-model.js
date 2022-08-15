@@ -14,12 +14,12 @@ async function get() {
 }
 
 async function getById(id) {
-  db('shippers').where('shipperid', id);
+  return db('shippers').where('shipperid', id);
 }
 
 async function create(shipper) {
   const [id] = await db('shippers').insert(shipper);
-  return getById(id)
+  return await getById(id)
 }
 
 async function update() {
