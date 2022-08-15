@@ -9,7 +9,7 @@
 const db = require('./data/db-config');
 
 // SELECT * FROM Shippers;
-db('shippers')
+db('shippers').select('phone')
   .then(result => {
     console.log(result);
   });
