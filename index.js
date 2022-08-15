@@ -9,19 +9,19 @@
 const db = require('./data/db-config');
 
 // SELECT * FROM Shippers WHERE ShipperName = 'Speedy Express' AND ShipperID = 1;
-// db('shippers')
+db('shippers')
 //   // .where('shippername', 'Speedy Express')
 //   .where({
 //     ShipperName: 'Speedy Express',
 //     ShipperID: 1,
 //   })
-//   .then(result => {
-//     console.log(result);
-//   });
-
-// INSERT INTO Shippers (ShipperName, Phone) VALUES ('New Shipper', '1234567890')
-db('shippers')
-  .insert({ ShipperName: 'New Shipper', Phone: '1234567890' })
   .then(result => {
     console.log(result);
   });
+
+// INSERT INTO Shippers (ShipperName, Phone) VALUES ('New Shipper', '1234567890')
+// db('shippers')
+//   .insert({ ShipperName: 'New Shipper', Phone: '1234567890' })
+//   .then(result => {
+//     console.log(result);
+//   });
