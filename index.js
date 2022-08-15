@@ -27,7 +27,12 @@ const db = require('./data/db-config');
 //   });
 
 // UPDATE Shippers SET ShipperName = 'Newest Shipper' WHERE ShipperID = 7
-db('shippers').where('ShipperID', 7).update({ ShipperName: 'Newest Shipper'})
+// db('shippers').where('ShipperID', 7).update({ ShipperName: 'Newest Shipper'})
+//   .then(result => {
+//     console.log(result);
+//   });
+
+db('shippers').where('ShipperId', 7).delete()
   .then(result => {
     console.log(result);
   });
