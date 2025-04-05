@@ -9,7 +9,7 @@
   "repository": "https://github.com/bloominstituteoftechnology/node-db1-guided.git",
   "license": "MIT",
   "dependencies": {
-    "sqlite3": "^5.1.4",
+    "sqlite3": "^5.1.5",
     "express": "^4.18.2",
     "knex": "^2.4.2"
   },
