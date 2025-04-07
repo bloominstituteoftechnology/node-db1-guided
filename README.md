@@ -4,7 +4,7 @@ In this project we will cover the basics of `Structure Query Language (SQL)`, `R
 
 ## Prerequisites
 
-- [SQLite Studio Installed](https://sqlitestudio.pl/index.rvt?act=download).
+- [SQLite Studio Installed](https://sqlitestudio.pl/).
 
 ## Project Setup
 
